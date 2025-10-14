@@ -1,0 +1,720 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #000;
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navigation */
+.navbar {
+    background-color: #000;
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo h2 {
+    color: #22c55e;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #22c55e;
+}
+
+.language-select {
+    background-color: #22c55e;
+    color: #000;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    outline: none;
+}
+
+.language-select:hover {
+    background-color: #16a34a;
+    transform: translateY(-2px);
+}
+
+.language-select option {
+    background-color: #22c55e;
+    color: #000;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), 
+                url('https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #fff;
+    padding: 120px 0 80px;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, #22c55e, #16a34a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-align: center;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #ccc;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #22c55e;
+    color: #000;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    border: 2px solid #22c55e;
+}
+
+.cta-button:hover {
+    background-color: transparent;
+    color: #22c55e;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(34, 197, 94, 0.3);
+}
+
+/* Calculator Section */
+.calculator-section {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.calculator-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #000;
+}
+
+.calculator-section p {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 3rem;
+}
+
+.calculator-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #f8f9fa;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #000;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #22c55e;
+}
+
+.calculate-button {
+    width: 100%;
+    background-color: #22c55e;
+    color: #000;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.calculate-button:hover {
+    background-color: #16a34a;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(34, 197, 94, 0.3);
+}
+
+/* Results Section */
+.results-section {
+    margin-top: 2rem;
+    padding: 2rem;
+    background-color: #000;
+    border-radius: 15px;
+    color: #fff;
+}
+
+.results-section h3 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #22c55e;
+    font-size: 1.8rem;
+}
+
+.result-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.result-card {
+    background-color: #1a1a1a;
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    border: 2px solid #22c55e;
+}
+
+.result-card h4 {
+    color: #22c55e;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.result-card p {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+/* Seed Companies Section */
+.seed-companies {
+    margin-top: 2rem;
+    padding: 2rem;
+    background-color: #1a1a1a;
+    border-radius: 15px;
+    border: 2px solid #22c55e;
+}
+
+.seed-companies h4 {
+    color: #22c55e;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+}
+
+.company-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.company-card {
+    background-color: #2a2a2a;
+    padding: 1.5rem;
+    border-radius: 10px;
+    border: 1px solid #22c55e;
+    text-align: center;
+}
+
+.company-card h5 {
+    color: #22c55e;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.company-card p {
+    color: #ccc;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.company-card strong {
+    color: #22c55e;
+}
+
+.store-locations {
+    background-color: #2a2a2a;
+    padding: 1.5rem;
+    border-radius: 10px;
+    border: 1px solid #22c55e;
+}
+
+.store-locations h5 {
+    color: #22c55e;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.store-locations ul {
+    list-style: none;
+    padding: 0;
+}
+
+.store-locations li {
+    margin-bottom: 0.8rem;
+    color: #ccc;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.store-locations li:before {
+    content: "📍";
+    position: absolute;
+    left: 0;
+    color: #22c55e;
+}
+
+.store-locations strong {
+    color: #22c55e;
+}
+
+/* Farming Guide Section */
+.farming-guide {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+.farming-guide h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #000;
+}
+
+.guide-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.guide-card {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #22c55e;
+    transition: transform 0.3s ease;
+}
+
+.guide-card:hover {
+    transform: translateY(-5px);
+}
+
+.guide-card h3 {
+    color: #000;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.guide-card ul {
+    list-style: none;
+}
+
+.guide-card li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #666;
+}
+
+.guide-card li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #22c55e;
+    font-weight: bold;
+}
+
+/* Money Guide Section */
+.money-guide {
+    padding: 80px 0;
+    background-color: #000;
+    color: #fff;
+}
+
+.money-guide h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #22c55e;
+}
+
+.money-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.money-card {
+    background-color: #1a1a1a;
+    padding: 2rem;
+    border-radius: 15px;
+    border: 2px solid #22c55e;
+    transition: transform 0.3s ease;
+}
+
+.money-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(34, 197, 94, 0.2);
+}
+
+.money-card h3 {
+    color: #22c55e;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.money-card ul {
+    list-style: none;
+}
+
+.money-card li {
+    margin-bottom: 0.8rem;
+    color: #ccc;
+}
+
+.money-card strong {
+    color: #22c55e;
+}
+
+/* Water Saving Section */
+.water-saving {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+.water-saving h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #000;
+}
+
+.water-saving > .container > p {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 3rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.water-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.water-card {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #22c55e;
+    transition: transform 0.3s ease;
+}
+
+.water-card:hover {
+    transform: translateY(-5px);
+}
+
+.water-card h3 {
+    color: #000;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.water-card ul {
+    list-style: none;
+}
+
+.water-card li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #666;
+}
+
+.water-card li:before {
+    content: "💧";
+    position: absolute;
+    left: 0;
+    color: #22c55e;
+    font-weight: bold;
+}
+
+.water-card strong {
+    color: #22c55e;
+}
+
+.water-tips {
+    background-color: #000;
+    padding: 2rem;
+    border-radius: 15px;
+    color: #fff;
+    margin-top: 2rem;
+}
+
+.water-tips h3 {
+    text-align: center;
+    color: #22c55e;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.tip-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    border: 2px solid #22c55e;
+    transition: transform 0.3s ease;
+}
+
+.tip-item:hover {
+    transform: translateY(-3px);
+}
+
+.tip-item span {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.tip-item p {
+    color: #ccc;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* Footer */
+.footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 2rem 0;
+    border-top: 2px solid #22c55e;
+}
+
+.footer p {
+    color: #ccc;
+}
+
+.footer-link {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.footer-link p {
+    color: #ccc;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.external-link {
+    color: #22c55e;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border: 2px solid #22c55e;
+    padding: 8px 16px;
+    border-radius: 25px;
+    display: inline-block;
+}
+
+.external-link:hover {
+    background-color: #22c55e;
+    color: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(34, 197, 94, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: #000;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        padding: 2rem 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .calculator-section h2,
+    .farming-guide h2,
+    .money-guide h2,
+    .water-saving h2 {
+        font-size: 2rem;
+    }
+
+    .guide-grid,
+    .money-grid,
+    .water-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .result-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .tips-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .calculator-form {
+        padding: 1.5rem;
+    }
+
+    .guide-card,
+    .money-card,
+    .water-card {
+        padding: 1.5rem;
+    }
+
+    .tip-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+}
