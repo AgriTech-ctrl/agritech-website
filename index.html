@@ -1,10 +1,347 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>AgriTech Website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriTech - Smart Agriculture Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1>Welcome to AgriTech!</h1>
-  <p>This site is now working on GitHub Pages.</p>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>🌱 AgriTech</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link" data-en="Home" data-se="Gae" data-ve="Ḓorobo" data-ts="Kaya">Home</a></li>
+                <li><a href="#calculator" class="nav-link" data-en="Crop Calculator" data-se="Sebedi sa Dithunya" data-ve="Tshivhudzuludzi tsha Mbeu" data-ts="Xikombelo xa Miri">Crop Calculator</a></li>
+                <li><a href="#farming-guide" class="nav-link" data-en="Farming Guide" data-se="Tataiso ya Temo" data-ve="Tshigwadzulo tsha Vhulimi" data-ts="Xikongomelo xa Vurimi">Farming Guide</a></li>
+                <li><a href="#money-guide" class="nav-link" data-en="Money Making" data-se="Go Bua Tshelete" data-ve="U Ita Mari" data-ts="Ku Tiva Mari">Money Making</a></li>
+                <li><a href="#water-saving" class="nav-link" data-en="Water Saving" data-se="Go Boloka Meetse" data-ve="U Boloka Meetse" data-ts="Ku Hlayisa Mati">Water Saving</a></li>
+                <li>
+                    <select id="language-toggle" class="language-select">
+                        <option value="en">🌐 English</option>
+                        <option value="se">🌐 Sepedi</option>
+                        <option value="ve">🌐 Venda</option>
+                        <option value="ts">🌐 Tsonga</option>
+                    </select>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1 data-en="Smart Agriculture Solutions" data-se="Ditshwanelo tsa Temo e Botse" data-ve="Tshivhudzuludzi tsha Vhulimi" data-ts="Vutshila bya Vurimi">Smart Agriculture Solutions</h1>
+                <p data-en="Calculate your crop needs, learn farming basics, and discover how to make money from your own farm" data-se="Bala dithunya tsa gago, ithute ka temo, le bona ka moo o ka buang tshelete ka temo ya gago" data-ve="Vhudzuludzi mbeu dzawe, guda zwikili zwa vhulimi, na u vhona nga nḓila ya u ita mari nga vhulimi hawe" data-ts="Hlaya miri wa wena, dyondza swikili swa vurimi, na ku vona hi ndlela ya ku tiva mari hi vurimi bya wena">Calculate your crop needs, learn farming basics, and discover how to make money from your own farm</p>
+                <a href="#calculator" class="cta-button" data-en="Start Planning Your Farm" data-se="Simolla Go Rulaganya Temo ya Gago" data-ve="Thoma U Rulaganya Vhulimi Hawe" data-ts="Sungula Ku Rungula Vurimi bya Wena">Start Planning Your Farm</a>
+            </div>
+        </section>
+
+        <!-- Crop Calculator Section -->
+        <section id="calculator" class="calculator-section">
+            <div class="container">
+                <h2 data-en="Crop Calculator" data-se="Sebedi sa Dithunya">Crop Calculator</h2>
+                <p data-en="Enter your garden details to calculate crop requirements and costs" data-se="Kenya dintlha tsa serapa sa gago go bala dithunya le ditshenyegelo">Enter your garden details to calculate crop requirements and costs</p>
+                
+                <div class="calculator-form">
+                    <div class="form-group">
+                        <label for="length" data-en="Garden Length (m):" data-se="Bolelele bja Serapa (m):">Garden Length (m):</label>
+                        <input type="number" id="length" placeholder="Enter length in meters" min="1" step="0.1">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="width" data-en="Garden Width (m):" data-se="Bophara bja Serapa (m):">Garden Width (m):</label>
+                        <input type="number" id="width" placeholder="Enter width in meters" min="1" step="0.1">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="crop-type" data-en="Select Crop Type:" data-se="Kgetha Mofuta wa Thunya:">Select Crop Type:</label>
+                        <select id="crop-type">
+                            <option value="" data-en="Choose a crop" data-se="Kgetha thunya">Choose a crop</option>
+                            <option value="tomatoes" data-en="Tomatoes" data-se="Ditamati">Tomatoes</option>
+                            <option value="cabbage" data-en="Cabbage" data-se="Kabbage">Cabbage</option>
+                            <option value="onions" data-en="Onions" data-se="Dionion">Onions</option>
+                            <option value="beetroot" data-en="Beetroot" data-se="Beetroot">Beetroot</option>
+                            <option value="carrots" data-en="Carrots" data-se="Dikaroti">Carrots</option>
+                            <option value="potatoes" data-en="Potatoes" data-se="Ditapole">Potatoes</option>
+                        </select>
+                    </div>
+                    
+                    <button id="calculate-btn" class="calculate-button" data-en="Calculate Requirements" data-se="Bala Dithunya">Calculate Requirements</button>
+                </div>
+                
+                <div id="results" class="results-section" style="display: none;">
+                    <h3 data-en="Your Farm Plan" data-se="Morero wa Temo ya Gago" data-ve="Tshigwadzulo tsha Vhulimi Hawe" data-ts="Xirungulo xa Vurimi bya Wena">Your Farm Plan</h3>
+                    <div class="result-cards">
+                        <div class="result-card">
+                            <h4 data-en="Seeds Needed" data-se="Peo tsa Go Nyakega" data-ve="Mbeu dza Zwine Zwa Nyadzwa" data-ts="Mbeu le Swi Nyakaka">Seeds Needed</h4>
+                            <p id="plants-needed">0</p>
+                        </div>
+                        <div class="result-card">
+                            <h4 data-en="Estimated Cost" data-se="Tshelete e Akanyetsweng" data-ve="Mari dza Zwine Zwa Akanyedzwa" data-ts="Xikweleti le Xi Akanyeriweke">Estimated Cost</h4>
+                            <p id="estimated-cost">$0</p>
+                        </div>
+                        <div class="result-card">
+                            <h4 data-en="Row & Plant Spacing" data-se="Sebaka sa Dikgato le Dimela" data-ve="Sebaka sa Dikgato na Miri" data-ts="Ndhawu ya Dikgato na Miri">Row & Plant Spacing</h4>
+                            <p id="spacing-info">-</p>
+                        </div>
+                        <div class="result-card">
+                            <h4 data-en="Planting Season" data-se="Nako ya Go Lema" data-ve="Nga ya U Lema" data-ts="Nkarhi wa Ku Rima">Planting Season</h4>
+                            <p id="planting-season">-</p>
+                        </div>
+                        <div class="result-card">
+                            <h4 data-en="Harvest Time" data-se="Nako ya Go Rua" data-ve="Nga ya U Rua" data-ts="Nkarhi wa Ku Rhola">Harvest Time</h4>
+                            <p id="harvest-time">-</p>
+                        </div>
+                    </div>
+                    
+                    <div class="seed-companies">
+                        <h4 data-en="🌱 Where to Buy Seeds in South Africa" data-se="🌱 Lefelong la Go Reka Peo ka Afrika Borwa" data-ve="🌱 Tshifhinga tsha u Rekisa Mbeu nga Afrika Borwa" data-ts="🌱 Ndhawu ya Ku Renga Mbeu e Afrika Dzonga">🌱 Where to Buy Seeds in South Africa</h4>
+                        <div class="company-grid">
+                            <div class="company-card">
+                                <h5>Starke Ayres</h5>
+                                <p data-en="Premium vegetable seeds" data-se="Peo tše botse tša merogo" data-ve="Mbeu dza u luga dza zwiḽiwa" data-ts="Mbeu le mi lulamile ya swakudya">Premium vegetable seeds</p>
+                                <p><span data-en="Look for:" data-se="Hwetša:" data-ve="Ṱoḓola:" data-ts="Hlaya:">Look for:</span> <span data-en="Starke Ayres packets" data-se="Dipakete tša Starke Ayres" data-ve="Dipakete dza Starke Ayres" data-ts="Dipakete ta Starke Ayres">Starke Ayres packets</span></p>
+                            </div>
+                            <div class="company-card">
+                                <h5>Mayford Seeds</h5>
+                                <p data-en="Local and imported varieties" data-se="Mefuta ya lefelo le ya go tšwa ka ntle" data-ve="Mefuta ya tshifhinga na ya u tshila nga tshifhinga" data-ts="Mefuta ya ndhawu na ya ku tshila hi ndhawu">Local and imported varieties</p>
+                                <p><span data-en="Look for:" data-se="Hwetša:" data-ve="Ṱoḓola:" data-ts="Hlaya:">Look for:</span> <span data-en="Mayford brand" data-se="Brand ya Mayford" data-ve="Brand ya Mayford" data-ts="Brand ya Mayford">Mayford brand</span></p>
+                            </div>
+                            <div class="company-card">
+                                <h5>Hygrotech</h5>
+                                <p data-en="Professional grade seeds" data-se="Peo tša boemo bja profešenale" data-ve="Mbeu dza boemo bja profešenale" data-ts="Mbeu le boemo bya profešenale">Professional grade seeds</p>
+                                <p><span data-en="Look for:" data-se="Hwetša:" data-ve="Ṱoḓola:" data-ts="Hlaya:">Look for:</span> <span data-en="Hygrotech packaging" data-se="Dipakete tša Hygrotech" data-ve="Dipakete dza Hygrotech" data-ts="Dipakete ta Hygrotech">Hygrotech packaging</span></p>
+                            </div>
+                            <div class="company-card">
+                                <h5>PanAmerican Seed</h5>
+                                <p data-en="International quality seeds" data-se="Peo tša boleng bja lefase ka moka" data-ve="Mbeu dza boleng bja lefase ka moka" data-ts="Mbeu le boleng bya lefase hinkwawo">International quality seeds</p>
+                                <p><span data-en="Look for:" data-se="Hwetša:" data-ve="Ṱoḓola:" data-ts="Hlaya:">Look for:</span> <span data-en="PanAmerican logo" data-se="Logo ya PanAmerican" data-ve="Logo ya PanAmerican" data-ts="Logo ya PanAmerican">PanAmerican logo</span></p>
+                            </div>
+                        </div>
+                        
+                        <div class="store-locations">
+                            <h5 data-en="🏪 Where to Find Them:" data-se="🏪 Lefelong la Go Di Hwetša:" data-ve="🏪 Tshifhinga tsha u Di Wana:" data-ts="🏪 Ndhawu ya Ku Di Kuma:">🏪 Where to Find Them:</h5>
+                            <ul>
+                                <li><span data-en="Garden Centers:" data-se="Ditsentara tša Serapa:" data-ve="Tshifhinga tsha Serapa:" data-ts="Swikongomelo swa Serapa:">Garden Centers:</span> <span data-en="Builders Warehouse, Garden World, Lifestyle Garden Centre" data-se="Builders Warehouse, Garden World, Lifestyle Garden Centre" data-ve="Builders Warehouse, Garden World, Lifestyle Garden Centre" data-ts="Builders Warehouse, Garden World, Lifestyle Garden Centre">Builders Warehouse, Garden World, Lifestyle Garden Centre</span></li>
+                                <li><span data-en="Nurseries:" data-se="Dikgokelo tša Dimela:" data-ve="Tshifhinga tsha Miri:" data-ts="Swikongomelo swa Miri:">Nurseries:</span> <span data-en="Local nurseries and garden shops" data-se="Dikgokelo tša lefelo le ditoro tša serapa" data-ve="Tshifhinga tsha tshifhinga na ditoro dza serapa" data-ts="Swikongomelo swa ndhawu na ditoro ta serapa">Local nurseries and garden shops</span></li>
+                                <li><span data-en="Online:" data-se="Inthanete:" data-ve="Inthanete:" data-ts="Inthanete:">Online:</span> <span data-en="Takealot, Yuppiechef, Seeds for Africa" data-se="Takealot, Yuppiechef, Seeds for Africa" data-ve="Takealot, Yuppiechef, Seeds for Africa" data-ts="Takealot, Yuppiechef, Seeds for Africa">Takealot, Yuppiechef, Seeds for Africa</span></li>
+                                <li><span data-en="Agricultural Stores:" data-se="Ditoro tša Temo:" data-ve="Ditoro dza Vhulimi:" data-ts="Ditoro ta Vurimi:">Agricultural Stores:</span> <span data-en="Co-op stores, agricultural supply shops" data-se="Ditoro tša Co-op, ditoro tša ditshepedišo tša temo" data-ve="Ditoro dza Co-op, ditoro dza tshifhinga tsha vhulimi" data-ts="Ditoro ta Co-op, ditoro ta swirhama swa vurimi">Co-op stores, agricultural supply shops</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Farming Guide Section -->
+        <section id="farming-guide" class="farming-guide">
+            <div class="container">
+                <h2 data-en="Farming Basics Guide" data-se="Tataiso ya Temo ya Motheo" data-ve="Tshigwadzulo tsha Vhulimi" data-ts="Xikongomelo xa Vurimi">Farming Basics Guide</h2>
+                <div class="guide-grid">
+                    <div class="guide-card">
+                        <h3 data-en="🌱 How to Start" data-se="🌱 Ka Mo Go Simololang" data-ve="🌱 Nga Nḓila Ya U Thoma" data-ts="🌱 Hi Ndlela Ya Ku Sungula">🌱 How to Start</h3>
+                        <ul>
+                            <li data-en="Find a sunny spot - plants need 6-8 hours of sun" data-se="Hwetša lefelo le le kganya - dimela di nyaka diiri tše 6-8 tša letsatsi" data-ve="Wana tshifhinga tsha ḓuvha - miri zwi ḓo nyadza maora a 6-8 a ḓuvha" data-ts="Kuma ndhawu le ku kanya - miri swi lava maora ya 6-8 ya dyambu">Find a sunny spot - plants need 6-8 hours of sun</li>
+                            <li data-en="Check your soil is good (not too acid, not too alkaline)" data-se="Hlahloba mmu wa gago o lokile (ga se acid kudu, ga se alkaline kudu)" data-ve="Ṱoḓola mmu hawe u hone (a si na acid nga maanda, a si na alkaline nga maanda)" data-ts="Hlaya misava ya wena yi lulamile (a yi ri na acid ngopfu, a yi ri na alkaline ngopfu)">Check your soil is good (not too acid, not too alkaline)</li>
+                            <li data-en="Start with easy plants like lettuce and carrots" data-se="Simolla ka dimela tše bonolo go swana le lettuce le carrots" data-ve="Thoma nga miri zwa u luga sa lettuce na carrots" data-ts="Sungula hi miri wo lula ku fana na lettuce na carrots">Start with easy plants like lettuce and carrots</li>
+                            <li data-en="Plan where to put each plant before you start" data-se="Rulaganya gore o tla bea dimela tša go fapana pele o simolla" data-ve="Rulaganya nga ha u ḓo vhea miri nga muthihi nga u thoma" data-ts="Rungula leswaku u ta veka miri hinkwawo endzhaku ka ku sungula">Plan where to put each plant before you start</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="guide-card">
+                        <h3 data-en="🌿 Prepare the Soil" data-se="🌿 Loka Mmung" data-ve="🌿 Lugisa Mmu" data-ts="🌿 Lulamisa Misava">🌿 Prepare the Soil</h3>
+                        <ul>
+                            <li data-en="Remove all weeds and rubbish from your garden" data-se="Tlosa dithunya ka moka le ditshila tša serapa sa gago" data-ve="Bvisa miri nga muthihi na tshila tsha tshifhinga tshawe" data-ts="Susula miri hinkwawo na switshila swa ndhawu ya wena">Remove all weeds and rubbish from your garden</li>
+                            <li data-en="Add compost or manure to make soil better" data-se="Tsenya compost goba manure go dira mmu o botse" data-ve="Wana compost kana manure u ita mmu u hone" data-ts="Ngetela compost kumbe manure ku endla misava yi lulamile">Add compost or manure to make soil better</li>
+                            <li data-en="Dig the soil deep (about 20-30cm deep)" data-se="Rema mmu ka botebo (ka mo go ka 20-30cm botebo)" data-ve="Rema mmu nga u rema (nga maanda a 20-30cm)" data-ts="Rima misava hi ku rima (eka 20-30cm ku rima)">Dig the soil deep (about 20-30cm deep)</li>
+                            <li data-en="Make raised beds if water stays on the ground" data-se="Dira mebete e e phakamilego ge meetse a dula fase" data-ve="Ita mibedhe ya u phakama nga meetse a ḓo dzula fhasi" data-ts="Endla mibedhi le yi phakamileke loko mati ma tshama ehansi">Make raised beds if water stays on the ground</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="guide-card">
+                        <h3 data-en="💧 Water and Look After Plants" data-se="💧 Meetse le Go Lebelela Dimela" data-ve="💧 Meetse na U Ṱoḓola Miri" data-ts="💧 Mati na Ku Hlaya Miri">💧 Water and Look After Plants</h3>
+                        <ul>
+                            <li data-en="Water plants well but not too often (once or twice a week)" data-se="Nwetsa dimela gabotse eupša ga se gantši (gabedi goba gabedi ka beke)" data-ve="Nwetsa miri nga u luga a si na u ita nga maanda (tshifhinga tshithihi kana tshivhili nga vhege)" data-ts="Nwetsa miri hi ku lula kambe a swi endli ngopfu (nkarhi wun'we kumbe mavhiki mavhiri)">Water plants well but not too often (once or twice a week)</li>
+                            <li data-en="Water in the morning to keep plants healthy" data-se="Nwetsa ka mesong go boloka dimela di phela gabotse" data-ve="Nwetsa nga masiari u ita miri zwi hone" data-ts="Nwetsa eka dyambu ku hlayisa miri mi lulamile">Water in the morning to keep plants healthy</li>
+                            <li data-en="Put mulch around plants to keep water in" data-se="Bea mulch ka gare ga dimela go boloka meetse" data-ve="Vhea mulch nga ha miri u ita meetse a hone" data-ts="Veka mulch emahlweni ka miri ku hlayisa mati">Put mulch around plants to keep water in</li>
+                            <li data-en="Check plants often for bugs and sickness" data-se="Hlahloba dimela gantši bakeng sa ditsenekele le bolwetši" data-ve="Ṱoḓola miri nga maanda nga tshilwadze na tshilwadze" data-ts="Hlaya miri ngopfu hi swinyenyana na swilwadi">Check plants often for bugs and sickness</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="guide-card">
+                        <h3 data-en="📅 When to Plant" data-se="📅 Nako ya Go Lema" data-ve="📅 Nga Ya U Lema" data-ts="📅 Nkarhi wa Ku Rima">📅 When to Plant</h3>
+                        <ul>
+                            <li data-en="Plant at the right time for your area" data-se="Lema ka nako e lokilego bakeng sa lefelo la gago" data-ve="Lema nga tshifhinga tsha u luga tsha tshifhinga tshawe" data-ts="Rima hi nkarhi wo lulamile wa ndhawu ya wena">Plant at the right time for your area</li>
+                            <li data-en="Start seeds inside 6-8 weeks before winter ends" data-se="Simolla peo ka gare ga 6-8 beke pele mariga a fela" data-ve="Thoma mbeu nga hafhu nga maora a 6-8 nga u fhedza nga tshilimo" data-ts="Sungula mbeu emahlweni ka mavhiki ya 6-8 endzhaku ka ku hela ka xilimo">Start seeds inside 6-8 weeks before winter ends</li>
+                            <li data-en="Plant new seeds every few weeks for more food" data-se="Lema peo e mpsha ka beke e nnyane go hwetša dijo tše ngata" data-ve="Lema mbeu dza u vhudzwa nga vhege nga muthihi u ita zwiḽiwa zwa u vhudzwa" data-ts="Rima mbeu mintsongo nkarhi wun'we na wun'we ku tiva swakudya swo tala">Plant new seeds every few weeks for more food</li>
+                            <li data-en="Write down what works in your garden" data-se="Ngwala tše di šomago serapeng sa gago" data-ve="Ṱoḓola zwi ḓo shuma tshifhinga tshawe" data-ts="Tsala leswi swi tirhaka ndhawu ya wena">Write down what works in your garden</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Money Making Guide -->
+        <section id="money-guide" class="money-guide">
+            <div class="container">
+                <h2 data-en="Making Money from Your Farm" data-se="Go Bua Tshelete ka Temo ya Gago" data-ve="U Ita Mari nga Vhulimi Hawe" data-ts="Ku Tiva Mari hi Vurimi bya Wena">Making Money from Your Farm</h2>
+                <div class="money-grid">
+                    <div class="money-card">
+                        <h3 data-en="💰 Direct Sales" data-se="💰 Thekgo ya Ka Nnete" data-ve="💰 Thekgo ya U Luga" data-ts="💰 Xithengiso xa Ntlhanu">💰 Direct Sales</h3>
+                        <ul>
+                            <li data-en="Farmers Markets: Sell fresh produce directly to consumers" data-se="Merekeng ya Balemi: Rekisa dithunya tše mpsha ka nnete go badiriši" data-ve="Marekeng a Vhulimi: Rekhisa zwiḽiwa zwa u luga nga u luga nga vhudzuludzi" data-ts="Marekeng ya Vurimi: Xithengisa swakudya swa ntshwa hi ntlhanu eka vatengi">Farmers Markets: Sell fresh produce directly to consumers</li>
+                            <li data-en="Roadside Stands: Set up a stand at your property" data-se="Dithaleng tša Tsela: Beha thaleng mošomong wa gago" data-ve="Mithaleng ya Tsela: Vhea thale nga tshifhinga tshawe" data-ts="Mithaleng ya Ndlela: Veka thale ndhawu ya wena">Roadside Stands: Set up a stand at your property</li>
+                            <li data-en="Community Supported Agriculture (CSA): Subscription-based sales" data-se="Temo e Thekgwago ke Setšhaba (CSA): Thekgo e thekgwago ke ditho" data-ve="Vhulimi ha u Thekhedzwa nga Tshifhinga (CSA): Thekgo ya u thekhedzwa nga vhudzuludzi" data-ts="Vurimi le Xi Sekeriweke hi Vaaki (CSA): Xithengiso le xi sekeriweke hi vatengi">Community Supported Agriculture (CSA): Subscription-based sales</li>
+                            <li data-en="Online Sales: Use social media and local delivery apps" data-se="Thekgo ya Inthanete: Šomiša media ya setšhaba le dithomelo tša lefelo" data-ve="Thekgo ya Inthanete: Shumisa media ya tshifhinga na tshifhinga tsha tshifhinga" data-ts="Xithengiso xa Inthanete: Tirhisa media ya vaaki na swa ku rhuma swa ndhawu">Online Sales: Use social media and local delivery apps</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="money-card">
+                        <h3 data-en="🏪 Business Opportunities" data-se="🏪 Ditšhono tša Kgwebo" data-ve="🏪 Tshifhinga tsha Kgwebo" data-ts="🏪 Swikongomelo swa Bussiness">🏪 Business Opportunities</h3>
+                        <ul>
+                            <li data-en="Restaurant Partnerships: Supply local restaurants with fresh produce" data-se="Dikgwebo tša Dirakeng: Hlahla dirake tša lefelo ka dithunya tše mpsha" data-ve="Vhudzuludzi ha Dirakeng: Hlahla dirake dza tshifhinga nga zwiḽiwa zwa u luga" data-ts="Vukhongeri bya Dirakeng: Hlahla dirake ta ndhawu hi swakudya swa ntshwa">Restaurant Partnerships: Supply local restaurants with fresh produce</li>
+                            <li data-en="Grocery Store Contracts: Wholesale to local stores" data-se="Dikontraka tša Ditoro: Thekgo ya ka moka go ditoro tša lefelo" data-ve="Dikontraka dza Ditoro: Thekgo ya u luga nga ditoro dza tshifhinga" data-ts="Swikongomelo swa Ditoro: Xithengiso xa ntlhanu eka ditoro ta ndhawu">Grocery Store Contracts: Wholesale to local stores</li>
+                            <li data-en="Value-Added Products: Jams, pickles, dried herbs" data-se="Dithunya tše Tšweleditšwego: Jams, pickles, mehlare e omilwego" data-ve="Zwiḽiwa zwa u Vhudzuludzi: Jams, pickles, miri ya u omiwa" data-ts="Swiendliwa swa Ku Engetela: Jams, pickles, miri wo omiweke">Value-Added Products: Jams, pickles, dried herbs</li>
+                            <li data-en="Farm Tours: Educational experiences for visitors" data-se="Maeto a Temo: Maitekelo a thuto bakeng sa baeti" data-ve="Maeto a Vhulimi: Maitekelo a thuto nga vhudzuludzi" data-ts="Maendlelo ya Vurimi: Maitekelo ya dyondzo eka vatengi">Farm Tours: Educational experiences for visitors</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="money-card">
+                        <h3 data-en="📈 Scaling Your Business" data-se="📈 Go Kgolo Kgwebo ya Gago" data-ve="📈 U Ita Kgwebo Hawe u Gude" data-ts="📈 Ku Endla Bussiness bya Wena byi Kula">📈 Scaling Your Business</h3>
+                        <ul>
+                            <li data-en="Start Small: Begin with high-value crops like herbs and microgreens" data-se="Simolla ka Nyenyane: Thoma ka dithunya tše bohlokwa go swana le mehlare le microgreens" data-ve="Thoma nga u Luga: Thoma nga miri ya u luga sa miri na microgreens" data-ts="Sungula hi Switsongo: Sungula hi miri wo tika ku fana na miri na microgreens">Start Small: Begin with high-value crops like herbs and microgreens</li>
+                            <li data-en="Track Expenses: Keep detailed records of costs and profits" data-se="Lebelela Ditshenyegelo: Boloka dintlha tše tšweleditšwego tša ditshenyegelo le melemo" data-ve="Ṱoḓola Tshifhinga: Boloka dintlha dza u luga dza tshifhinga na tshifhinga" data-ts="Hlaya Swikweleti: Hlayisa swikongomelo swa ntlhanu swa swikweleti na swikweleti">Track Expenses: Keep detailed records of costs and profits</li>
+                            <li data-en="Invest in Tools: Quality equipment pays for itself" data-se="Bea Tshelete mo Dirišong: Dirišo tše botse di iphefola" data-ve="Vhea Mari nga Tshifhinga: Tshifhinga tsha u luga tsha u luga" data-ts="Veka Mari eka Swirhama: Swirhama swa ntlhanu swi ti hlawula">Invest in Tools: Quality equipment pays for itself</li>
+                            <li data-en="Build Relationships: Network with other farmers and customers" data-se="Agang Dikgokagano: Kgokagana le balemi ba bangwe le badiriši" data-ve="Ita Vhudzuludzi: Vhudzuludzi nga vhulimi vha bangwe na vhudzuludzi" data-ts="Endla Vukhongeri: Vukhongeri na vurimi bya vun'wana na vatengi">Build Relationships: Network with other farmers and customers</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="money-card">
+                        <h3 data-en="💡 Profit Tips" data-se="💡 Ditshupetšo tša Melemo" data-ve="💡 Tshifhinga tsha Mari" data-ts="💡 Switshupelo swa Mari">💡 Profit Tips</h3>
+                        <ul>
+                            <li data-en="Focus on High-Value Crops: Herbs, microgreens, specialty vegetables" data-se="Kgogomela Dithunya tše Bohlokwa: Mehlare, microgreens, merogo ya go fapana" data-ve="Ṱoḓola Miri ya u Luga: Miri, microgreens, zwiḽiwa zwa u luga" data-ts="Hlaya Miri wo Tika: Miri, microgreens, swakudya swa ntlhanu">Focus on High-Value Crops: Herbs, microgreens, specialty vegetables</li>
+                            <li data-en="Extend Growing Season: Use greenhouses or cold frames" data-se="Okametša Nako ya Go Mela: Šomiša dihlo tša temo goba difreime tša go tonya" data-ve="Okametša Nga ya u Mela: Shumisa tshifhinga tsha tshifhinga kana tshifhinga tsha tshifhinga" data-ts="Okametisa Nkarhi wa Ku Mela: Tirhisa ndhawu ya ndhawu kumbe ndhawu ya ndhawu">Extend Growing Season: Use greenhouses or cold frames</li>
+                            <li data-en="Diversify Income: Multiple revenue streams reduce risk" data-se="Fapafatsa Tshelete: Ditsela tše ngata tša tshelete di fokotša kotsi" data-ve="Fapafatsa Mari: Tshifhinga tsha u luga tsha mari tsha u luga" data-ts="Fapafata Mari: Swikongomelo swo tala swa mari swi fokotse nkatsakanyo">Diversify Income: Multiple revenue streams reduce risk</li>
+                            <li data-en="Market Research: Know what customers want and will pay for" data-se="Nyakišišo ya Merekeng: Tseba gore badiriši ba nyaka eng le gore ba tla lefela eng" data-ve="Ṱoḓola Marekeng: Tseba zwi ḓo nyadzwa nga vhudzuludzi na zwi ḓo lefela" data-ts="Hlaya Marekeng: Tiva leswi vatengi va swi lava na leswi va ta swi hlawula">Market Research: Know what customers want and will pay for</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Water Saving Section -->
+        <section id="water-saving" class="water-saving">
+            <div class="container">
+                <h2 data-en="Water Saving Techniques" data-se="Dikgopolo tša Go Boloka Meetse" data-ve="Tshifhinga tsha U Boloka Meetse" data-ts="Swikongomelo swa Ku Hlayisa Mati">Water Saving Techniques</h2>
+                <p data-en="Learn how to conserve water while maintaining healthy crops and maximizing your farm's efficiency" data-se="Ithute ka moo o ka bolokago meetse mola o boloka dithunya tše botse le go okametša tšhomišo ya temo ya gago" data-ve="Guda nga nḓila ya u boloka meetse nga u ita miri zwi hone na u okametša tshifhinga tsha vhulimi hawe" data-ts="Dyondza hi ndlela ya ku hlayisa mati loko u hlayisa miri mi lulamile na ku okametisa tirhisa ndhawu ya wena">Learn how to conserve water while maintaining healthy crops and maximizing your farm's efficiency</p>
+                
+                <div class="water-grid">
+                    <div class="water-card">
+                        <h3 data-en="💧 Smart Irrigation" data-se="💧 Go Nwetsa ka Botse" data-ve="💧 U Nwetsa nga u Luga" data-ts="💧 Ku Nwetsa hi Ntlhanu">💧 Smart Irrigation</h3>
+                        <ul>
+                            <li data-en="Drip Irrigation: Water plants directly at the roots" data-se="Go Nwetsa ka Drip: Nwetsa dimela ka nnete ka mela" data-ve="U Nwetsa nga Drip: Nwetsa miri nga u luga nga mela" data-ts="Ku Nwetsa hi Drip: Nwetsa miri hi ntlhanu eka milenge">Drip Irrigation: Water plants directly at the roots</li>
+                            <li data-en="Soaker Hoses: Slow, deep watering that prevents waste" data-se="Dihose tša Soaker: Go nwetsa ka go tšofetša, ka botebo go thibela tšhila" data-ve="Dihose dza Soaker: U nwetsa nga u luga, nga u rema u thivhela tshila" data-ts="Dihose ta Soaker: Ku nwetsa hi ku lula, hi ku rima ku thivhela switshila">Soaker Hoses: Slow, deep watering that prevents waste</li>
+                            <li data-en="Timed Systems: Automatic watering at optimal times" data-se="Ditsisteme tša Nako: Go nwetsa ka boikemelo ka dinako tše botse" data-ve="Tshifhinga tsha Tshifhinga: U nwetsa nga u luga nga tshifhinga tsha u luga" data-ts="Swikongomelo swa Nkarhi: Ku nwetsa hi ntlhanu hi nkarhi wo lulamile">Timed Systems: Automatic watering at optimal times</li>
+                            <li data-en="Rain Sensors: Skip watering when it's raining" data-se="Disefo tša Pula: Tlogela go nwetsa ge pula e na" data-ve="Tshifhinga tsha Pula: Tshiya u nwetsa nga pula i na" data-ts="Swikongomelo swa Pula: Yeka ku nwetsa loko pula yi na">Rain Sensors: Skip watering when it's raining</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="water-card">
+                        <h3 data-en="🌱 Soil Management" data-se="🌱 Taolo ya Mmung" data-ve="🌱 Taolo ya Mmu" data-ts="🌱 Taolo ya Misava">🌱 Soil Management</h3>
+                        <ul>
+                            <li data-en="Mulching: Cover soil with organic matter to retain moisture" data-se="Mulching: Phuthela mmu ka dilo tša tlhago go boloka monyoro" data-ve="Mulching: Vhea mmu nga tshifhinga tsha tshifhinga u ita monyoro" data-ts="Mulching: Veka misava hi swilo swa ntlhanu ku hlayisa monyoro">Mulching: Cover soil with organic matter to retain moisture</li>
+                            <li data-en="Compost: Add compost to improve water retention" data-se="Compost: Tsenya compost go kaonafatša go boloka meetse" data-ve="Compost: Wana compost u ita u boloka meetse" data-ts="Compost: Ngetela compost ku endla ku hlayisa mati">Compost: Add compost to improve water retention</li>
+                            <li data-en="Raised Beds: Better drainage and water control" data-se="Mebete e e Phakamilego: Go tšhila meetse gabotse le taolo ya meetse" data-ve="Mibedhe ya u Phakama: U tshila meetse nga u luga na taolo ya meetse" data-ts="Mibedhi le Yi Phakamileke: Ku tshila mati hi ntlhanu na taolo ya mati">Raised Beds: Better drainage and water control</li>
+                            <li data-en="Cover Crops: Plant crops that protect soil from drying" data-se="Dithunya tša Go Phuthela: Lema dithunya tše di šireletšago mmu go omela" data-ve="Miri ya u Phuthela: Lema miri ya u šireletša mmu nga u omiwa" data-ts="Miri wa Ku Phuthela: Rima miri lowu hlayisaka misava ku omiwa">Cover Crops: Plant crops that protect soil from drying</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="water-card">
+                        <h3 data-en="🕐 Timing & Frequency" data-se="🕐 Nako le Gantši" data-ve="🕐 Tshifhinga na Gantši" data-ts="🕐 Nkarhi na Ngopfu">🕐 Timing & Frequency</h3>
+                        <ul>
+                            <li data-en="Early Morning: Water before 8 AM to reduce evaporation" data-se="Mesong ya Go Tloga: Nwetsa pele ga 8 AM go fokotša go fofela ga meetse" data-ve="Masiari a u Thoma: Nwetsa nga u thoma nga 8 AM u fokotša u fofela ga meetse" data-ts="Dyambu ra Ku Sungula: Nwetsa endzhaku ka 8 AM ku fokotse ku fofela ka mati">Early Morning: Water before 8 AM to reduce evaporation</li>
+                            <li data-en="Deep Watering: Water less often but more thoroughly" data-se="Go Nwetsa ka Botebo: Nwetsa gantši eupša ka botebo" data-ve="U Nwetsa nga u Rema: Nwetsa nga maanda a si na u ita nga maanda" data-ts="Ku Nwetsa hi Ku Rima: Nwetsa ngopfu kambe hi ku rima">Deep Watering: Water less often but more thoroughly</li>
+                            <li data-en="Weather Monitoring: Adjust watering based on weather" data-se="Go Lebelela Boemo bja Boso: Fetola go nwetsa go ya ka boemo bja boso" data-ve="Ṱoḓola Boemo bja Boso: Fetola u nwetsa nga boemo bja boso" data-ts="Ku Hlaya Boemo bya Boso: Fetola ku nwetsa hi boemo bya boso">Weather Monitoring: Adjust watering based on weather</li>
+                            <li data-en="Plant Needs: Different plants need different amounts" data-se="Dinyakwa tša Dimela: Dimela tše fapanego di nyaka bontši bjo fapanego" data-ve="Zwi ḓo Nyadzwa nga Miri: Miri ya u fapana zwi ḓo nyadza nga maanda a u fapana" data-ts="Swi Lavaka hi Miri: Miri wo fapana swi lava swikweleti swo fapana">Plant Needs: Different plants need different amounts</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="water-card">
+                        <h3 data-en="♻️ Water Recycling" data-se="♻️ Go Šomiša Meetse Gape" data-ve="♻️ U Shumisa Meetse Gape" data-ts="♻️ Ku Tirhisa Mati Gape">♻️ Water Recycling</h3>
+                        <ul>
+                            <li data-en="Grey Water: Use household water for plants" data-se="Meetse a Grey: Šomiša meetse a ntlo bakeng sa dimela" data-ve="Meetse a Grey: Shumisa meetse a tshifhinga nga miri" data-ts="Mati ya Grey: Tirhisa mati ya ndhawu eka miri">Grey Water: Use household water for plants</li>
+                            <li data-en="Rainwater Harvesting: Collect and store rainwater" data-se="Go Kgobokela Pula: Kgobokela le go boloka meetse a pula" data-ve="U Kgobokela Pula: Kgobokela na u boloka meetse a pula" data-ts="Ku Kgobokela Pula: Kgobokela na ku hlayisa mati ya pula">Rainwater Harvesting: Collect and store rainwater</li>
+                            <li data-en="Water Storage: Use tanks and barrels for storage" data-se="Go Boloka Meetse: Šomiša ditanki le dibarrel bakeng sa go boloka" data-ve="U Boloka Meetse: Shumisa ditanki na dibarrel nga u boloka" data-ts="Ku Hlayisa Mati: Tirhisa ditanki na dibarrel eka ku hlayisa">Water Storage: Use tanks and barrels for storage</li>
+                            <li data-en="Filtration: Clean water before using on plants" data-se="Go Hlwekiša: Hlwekiša meetse pele o a šomiša dimeleng" data-ve="U Hlwekiša: Hlwekiša meetse nga u thoma u a shumisa miri" data-ts="Ku Hlwekiša: Hlwekiša mati endzhaku ka ku sungula u a tirhisa miri">Filtration: Clean water before using on plants</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="water-card">
+                        <h3 data-en="🌿 Plant Selection" data-se="🌿 Kgetho ya Dimela" data-ve="🌿 Kgetho ya Miri" data-ts="🌿 Kgetho ya Miri">🌿 Plant Selection</h3>
+                        <ul>
+                            <li data-en="Drought-Resistant: Choose plants that need less water" data-se="Go Ima le Komelelo: Kgetha dimela tše di nyakago meetse a mantsi" data-ve="U Ima nga Komelelo: Kgetha miri ya zwi ḓo nyadza meetse a mantsi" data-ts="Ku Ima hi Komelelo: Kgetha miri lowu lava mati mantsi">Drought-Resistant: Choose plants that need less water</li>
+                            <li data-en="Native Plants: Local plants adapt better to climate" data-se="Dimela tša Naga: Dimela tša lefelo di ikamogela gabotse boemo bja boso" data-ve="Miri ya Tshifhinga: Miri ya tshifhinga zwi ikamogela nga u luga boemo bja boso" data-ts="Miri wa Ntlhanu: Miri wa ndhawu swi ikamogela hi ntlhanu boemo bya boso">Native Plants: Local plants adapt better to climate</li>
+                            <li data-en="Grouping: Plant similar water needs together" data-se="Go Kgobokanya: Lema dinyakwa tše tšwana tša meetse mmogo" data-ve="U Kgobokanya: Lema zwi ḓo nyadza zwa u fapana nga meetse mmogo" data-ts="Ku Kgobokanya: Rima swi lava swa u fapana hi mati swin'we">Grouping: Plant similar water needs together</li>
+                            <li data-en="Seasonal Planning: Plant water-efficient crops in dry seasons" data-se="Morero wa Dikga: Lema dithunya tše di šomišago meetse gabotse ka dikga tša komelelo" data-ve="Tshigwadzulo tsha Dikga: Lema miri ya u shumisa meetse nga u luga nga dikga dza komelelo" data-ts="Xirungulo xa Dikga: Rima miri lowu tirhaka mati hi ntlhanu eka dikga ra komelelo">Seasonal Planning: Plant water-efficient crops in dry seasons</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="water-card">
+                        <h3 data-en="📊 Monitoring & Tools" data-se="📊 Go Lebelela le Dirišo" data-ve="📊 Ṱoḓola na Tshifhinga" data-ts="📊 Ku Hlaya na Swirhama">📊 Monitoring & Tools</h3>
+                        <ul>
+                            <li data-en="Soil Moisture Meters: Check if plants need water" data-se="Disefo tša Monoro wa Mmung: Hlahloba ge dimela di nyaka meetse" data-ve="Tshifhinga tsha Monoro wa Mmu: Ṱoḓola nga miri zwi ḓo nyadza meetse" data-ts="Swiendliwa swa Monoro wa Misava: Hlaya loko miri swi lava mati">Soil Moisture Meters: Check if plants need water</li>
+                            <li data-en="Water Usage Tracking: Monitor how much water you use" data-se="Go Lebelela Tšhomišo ya Meetse: Lebelela gore o šomiša meetse a bontši bjang" data-ve="Ṱoḓola Tshifhinga tsha Meetse: Ṱoḓola nga u shumisa meetse nga maanda a bontši" data-ts="Ku Hlaya Tirhisa Mati: Hlaya hi ndlela ya ku tirhisa mati ngopfu">Water Usage Tracking: Monitor how much water you use</li>
+                            <li data-en="Weather Apps: Use technology to plan watering" data-se="Diapp tša Boemo bja Boso: Šomiša theknoloji go rulaganya go nwetsa" data-ve="Diapp dza Boemo bja Boso: Shumisa theknoloji u rulaganya u nwetsa" data-ts="Diapp ta Boemo bya Boso: Tirhisa theknoloji ku rungula ku nwetsa">Weather Apps: Use technology to plan watering</li>
+                            <li data-en="Smart Controllers: Automated systems that save water" data-se="Ditaolo tša Botse: Ditsisteme tša boikemelo tše di bolokago meetse" data-ve="Tshifhinga tsha u Luga: Tshifhinga tsha u luga tsha u boloka meetse" data-ts="Swikongomelo swa Ntlhanu: Swikongomelo swa ntlhanu swi hlayisa mati">Smart Controllers: Automated systems that save water</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="water-tips">
+                    <h3 data-en="💡 Quick Water Saving Tips" data-se="💡 Ditshupetšo tša Go Boloka Meetse" data-ve="💡 Tshifhinga tsha u Boloka Meetse" data-ts="💡 Switshupelo swa Ku Hlayisa Mati">💡 Quick Water Saving Tips</h3>
+                    <div class="tips-grid">
+                        <div class="tip-item">
+                            <span data-en="🌅" data-se="🌅" data-ve="🌅" data-ts="🌅">🌅</span>
+                            <p data-en="Water early morning or evening" data-se="Nwetsa mesong goba mantšiboa" data-ve="Nwetsa masiari kana mantšiboa" data-ts="Nwetsa dyambu kumbe mantšiboa">Water early morning or evening</p>
+                        </div>
+                        <div class="tip-item">
+                            <span data-en="🌿" data-se="🌿" data-ve="🌿" data-ts="🌿">🌿</span>
+                            <p data-en="Use mulch to keep soil moist" data-se="Šomiša mulch go boloka mmu o monoro" data-ve="Shumisa mulch u ita mmu u hone" data-ts="Tirhisa mulch ku hlayisa misava monoro">Use mulch to keep soil moist</p>
+                        </div>
+                        <div class="tip-item">
+                            <span data-en="💧" data-se="💧" data-ve="💧" data-ts="💧">💧</span>
+                            <p data-en="Fix leaks immediately" data-se="Lokisa go tšhila ga meetse ka nako" data-ve="Lokisa u tshila ga meetse nga tshifhinga" data-ts="Lulamisa ku tshila ka mati hi nkarhi">Fix leaks immediately</p>
+                        </div>
+                        <div class="tip-item">
+                            <span data-en="📏" data-se="📏" data-ve="📏" data-ts="📏">📏</span>
+                            <p data-en="Measure water usage" data-se="Bala tšhomišo ya meetse" data-ve="Bala tshifhinga tsha meetse" data-ts="Hlaya tirhisa mati">Measure water usage</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p data-en="&copy; 2025 AgriTech. Empowering smart agriculture solutions." data-se="&copy; 2025 AgriTech. Go matlafatsa ditshwanelo tsa temo e botse." data-ve="&copy; 2025 AgriTech. U matlafadza tshivhudzuludzi tsha vhulimi." data-ts="&copy; 2025 AgriTech. Ku matlafisa vutshila bya vurimi.">&copy; 2025 AgriTech. Empowering smart agriculture solutions.</p>
+            <div class="footer-link">
+                <p data-en="For more information visit:" data-se="Bakeng sa tshedimošo e ngata etela:" data-ve="Nga tshedziso dza u vhudzwa:" data-ts="Hi rungula ro tala hlaya:">For more information visit:</p>
+                <a href="http://lungelomk.github.io/Community-Gardens-SouthAfrica/" target="_blank" class="external-link" data-en="Community Gardens South Africa" data-se="Dikgokelo tša Serapa tša Afrika Borwa" data-ve="Tshifhinga tsha Serapa tsha Afrika Borwa" data-ts="Swikongomelo swa Serapa swa Afrika Dzonga">Community Gardens South Africa</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
