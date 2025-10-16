@@ -3,7 +3,8 @@ const cropData = {
     tomatoes: {
         rowSpacing: 90, // cm between rows
         plantSpacing: 60, // cm between plants
-        costPerPlant: 2.00, // Rands
+        costPerPlant: 45.00, // Rands
+        fertilizerCostPerPlant: 15.00, // Rands for fertilizer per plant
         name: "Tomatoes",
         plantingSeason: "Spring-Summer (Sep-Feb)",
         harvestTime: "3-4 months after planting",
@@ -12,7 +13,8 @@ const cropData = {
     cabbage: {
         rowSpacing: 60, // cm between rows
         plantSpacing: 45, // cm between plants
-        costPerPlant: 6.50, // Rands
+        costPerPlant: 25.00, // Rands
+        fertilizerCostPerPlant: 12.00, // Rands for fertilizer per plant
         name: "Cabbage",
         plantingSeason: "Autumn-Winter (Mar-Aug)",
         harvestTime: "3-4 months after planting",
@@ -22,6 +24,7 @@ const cropData = {
         rowSpacing: 30, // cm between rows
         plantSpacing: 10, // cm between plants
         costPerPlant: 8.00, // Rands
+        fertilizerCostPerPlant: 5.00, // Rands for fertilizer per plant
         name: "Onions",
         plantingSeason: "Autumn-Winter (Mar-Aug)",
         harvestTime: "4-5 months after planting",
@@ -30,7 +33,8 @@ const cropData = {
     beetroot: {
         rowSpacing: 40, // cm between rows
         plantSpacing: 15, // cm between plants
-        costPerPlant: 5.00, // Rands
+        costPerPlant: 12.00, // Rands
+        fertilizerCostPerPlant: 8.00, // Rands for fertilizer per plant
         name: "Beetroot",
         plantingSeason: "Autumn-Winter (Mar-Aug)",
         harvestTime: "2-3 months after planting",
@@ -39,7 +43,8 @@ const cropData = {
     carrots: {
         rowSpacing: 30, // cm between rows
         plantSpacing: 8, // cm between plants
-        costPerPlant: 4.00, // Rands
+        costPerPlant: 9.00, // Rands
+        fertilizerCostPerPlant: 6.00, // Rands for fertilizer per plant
         name: "Carrots",
         plantingSeason: "Autumn-Winter (Mar-Aug)",
         harvestTime: "2-3 months after planting",
@@ -48,7 +53,8 @@ const cropData = {
     potatoes: {
         rowSpacing: 75, // cm between rows
         plantSpacing: 30, // cm between plants
-        costPerPlant: 3.00, // Rands
+        costPerPlant: 15.00, // Rands
+        fertilizerCostPerPlant: 10.00, // Rands for fertilizer per plant
         name: "Potatoes",
         plantingSeason: "Autumn-Winter (Mar-Aug)",
         harvestTime: "3-4 months after planting",
@@ -64,6 +70,8 @@ const calculateBtn = document.getElementById('calculate-btn');
 const resultsSection = document.getElementById('results');
 const plantsNeededEl = document.getElementById('plants-needed');
 const estimatedCostEl = document.getElementById('estimated-cost');
+const fertilizerCostEl = document.getElementById('fertilizer-cost');
+const totalCostEl = document.getElementById('total-cost');
 const spacingInfoEl = document.getElementById('spacing-info');
 const plantingSeasonEl = document.getElementById('planting-season');
 const harvestTimeEl = document.getElementById('harvest-time');
@@ -142,15 +150,19 @@ function calculateCropRequirements() {
     // Calculate total plants needed
     const plantsNeeded = Math.floor(area * plantsPerSqMeter);
     
-    // Calculate total cost
-    const totalCost = plantsNeeded * crop.costPerPlant;
+    // Calculate costs
+    const seedsCost = plantsNeeded * crop.costPerPlant;
+    const fertilizerCost = plantsNeeded * crop.fertilizerCostPerPlant;
+    const totalCost = seedsCost + fertilizerCost;
     
     // Calculate spacing information
     const spacingInfo = `Rows: ${crop.rowSpacing}cm apart, Plants: ${crop.plantSpacing}cm apart`;
     
     // Display results
     plantsNeededEl.textContent = plantsNeeded;
-    estimatedCostEl.textContent = `R${totalCost.toFixed(2)}`;
+    estimatedCostEl.textContent = `R${seedsCost.toFixed(2)}`;
+    fertilizerCostEl.textContent = `R${fertilizerCost.toFixed(2)}`;
+    totalCostEl.textContent = `R${totalCost.toFixed(2)}`;
     spacingInfoEl.textContent = spacingInfo;
     plantingSeasonEl.textContent = crop.plantingSeason;
     harvestTimeEl.textContent = crop.harvestTime;
@@ -313,11 +325,15 @@ function enhancedCalculateCropRequirements() {
     const plantSpacingInMeters = crop.plantSpacing / 100;
     const plantsPerSqMeter = 1 / (rowSpacingInMeters * plantSpacingInMeters);
     const plantsNeeded = Math.floor(area * plantsPerSqMeter);
-    const totalCost = plantsNeeded * crop.costPerPlant;
+    const seedsCost = plantsNeeded * crop.costPerPlant;
+    const fertilizerCost = plantsNeeded * crop.fertilizerCostPerPlant;
+    const totalCost = seedsCost + fertilizerCost;
     
     // Display results
     plantsNeededEl.textContent = plantsNeeded;
-    estimatedCostEl.textContent = `R${totalCost.toFixed(2)}`;
+    estimatedCostEl.textContent = `R${seedsCost.toFixed(2)}`;
+    fertilizerCostEl.textContent = `R${fertilizerCost.toFixed(2)}`;
+    totalCostEl.textContent = `R${totalCost.toFixed(2)}`;
     spacingInfoEl.textContent = `Rows: ${crop.rowSpacing}cm apart, Plants: ${crop.plantSpacing}cm apart`;
     plantingSeasonEl.textContent = crop.plantingSeason;
     harvestTimeEl.textContent = crop.harvestTime;
