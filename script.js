@@ -4,7 +4,7 @@ const cropData = {
         rowSpacing: 90, // cm between rows
         plantSpacing: 60, // cm between plants
         costPerPlant: 5.00, // Rands
-        fertilizerCostPerPlant: 15.00, // Rands for fertilizer per plant
+        fertilizerCostPerPlant: 14.00, // Rands for fertilizer per plant
         name: "Tomatoes",
         plantingSeason: "Spring-Summer (Sep-Feb)",
         harvestTime: "3-4 months after planting",
@@ -23,7 +23,7 @@ const cropData = {
     onions: {
         rowSpacing: 30, // cm between rows
         plantSpacing: 10, // cm between plants
-        costPerPlant: 8.00, // Rands
+        costPerPlant: 3.50, // Rands
         fertilizerCostPerPlant: 5.00, // Rands for fertilizer per plant
         name: "Onions",
         plantingSeason: "Autumn-Winter (Mar-Aug)",
@@ -43,7 +43,7 @@ const cropData = {
     carrots: {
         rowSpacing: 30, // cm between rows
         plantSpacing: 8, // cm between plants
-        costPerPlant: 9.00, // Rands
+        costPerPlant: 3.00, // Rands
         fertilizerCostPerPlant: 6.00, // Rands for fertilizer per plant
         name: "Carrots",
         plantingSeason: "Autumn-Winter (Mar-Aug)",
@@ -53,7 +53,7 @@ const cropData = {
     potatoes: {
         rowSpacing: 75, // cm between rows
         plantSpacing: 30, // cm between plants
-        costPerPlant: 7.00, // Rands
+        costPerPlant: 3.55, // Rands
         fertilizerCostPerPlant: 10.00, // Rands for fertilizer per plant
         name: "Potatoes",
         plantingSeason: "Autumn-Winter (Mar-Aug)",
@@ -390,5 +390,6 @@ function switchLanguage() {
 
 // Add event listener for language toggle
 languageToggle.addEventListener('change', switchLanguage);
+
 
 
