@@ -3,7 +3,7 @@ const cropData = {
     tomatoes: {
         rowSpacing: 90, // cm between rows
         plantSpacing: 60, // cm between plants
-        costPerPlant: 45.00, // Rands
+        costPerPlant: 2.00, // Rands
         name: "Tomatoes",
         plantingSeason: "Spring-Summer (Sep-Feb)",
         harvestTime: "3-4 months after planting",
@@ -12,7 +12,7 @@ const cropData = {
     cabbage: {
         rowSpacing: 60, // cm between rows
         plantSpacing: 45, // cm between plants
-        costPerPlant: 25.00, // Rands
+        costPerPlant: 6.50, // Rands
         name: "Cabbage",
         plantingSeason: "Autumn-Winter (Mar-Aug)",
         harvestTime: "3-4 months after planting",
@@ -30,7 +30,7 @@ const cropData = {
     beetroot: {
         rowSpacing: 40, // cm between rows
         plantSpacing: 15, // cm between plants
-        costPerPlant: 12.00, // Rands
+        costPerPlant: 5.00, // Rands
         name: "Beetroot",
         plantingSeason: "Autumn-Winter (Mar-Aug)",
         harvestTime: "2-3 months after planting",
@@ -39,7 +39,7 @@ const cropData = {
     carrots: {
         rowSpacing: 30, // cm between rows
         plantSpacing: 8, // cm between plants
-        costPerPlant: 9.00, // Rands
+        costPerPlant: 4.00, // Rands
         name: "Carrots",
         plantingSeason: "Autumn-Winter (Mar-Aug)",
         harvestTime: "2-3 months after planting",
@@ -48,7 +48,7 @@ const cropData = {
     potatoes: {
         rowSpacing: 75, // cm between rows
         plantSpacing: 30, // cm between plants
-        costPerPlant: 15.00, // Rands
+        costPerPlant: 3.00, // Rands
         name: "Potatoes",
         plantingSeason: "Autumn-Winter (Mar-Aug)",
         harvestTime: "3-4 months after planting",
@@ -374,3 +374,4 @@ function switchLanguage() {
 
 // Add event listener for language toggle
 languageToggle.addEventListener('change', switchLanguage);
+
