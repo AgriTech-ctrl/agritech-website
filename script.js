@@ -3,7 +3,7 @@ const cropData = {
     tomatoes: {
         rowSpacing: 90, // cm between rows
         plantSpacing: 60, // cm between plants
-        costPerPlant: 45.00, // Rands
+        costPerPlant: 5.00, // Rands
         fertilizerCostPerPlant: 15.00, // Rands for fertilizer per plant
         name: "Tomatoes",
         plantingSeason: "Spring-Summer (Sep-Feb)",
@@ -13,7 +13,7 @@ const cropData = {
     cabbage: {
         rowSpacing: 60, // cm between rows
         plantSpacing: 45, // cm between plants
-        costPerPlant: 25.00, // Rands
+        costPerPlant: 4.00, // Rands
         fertilizerCostPerPlant: 12.00, // Rands for fertilizer per plant
         name: "Cabbage",
         plantingSeason: "Autumn-Winter (Mar-Aug)",
@@ -33,7 +33,7 @@ const cropData = {
     beetroot: {
         rowSpacing: 40, // cm between rows
         plantSpacing: 15, // cm between plants
-        costPerPlant: 12.00, // Rands
+        costPerPlant: 6.50, // Rands
         fertilizerCostPerPlant: 8.00, // Rands for fertilizer per plant
         name: "Beetroot",
         plantingSeason: "Autumn-Winter (Mar-Aug)",
@@ -53,7 +53,7 @@ const cropData = {
     potatoes: {
         rowSpacing: 75, // cm between rows
         plantSpacing: 30, // cm between plants
-        costPerPlant: 15.00, // Rands
+        costPerPlant: 7.00, // Rands
         fertilizerCostPerPlant: 10.00, // Rands for fertilizer per plant
         name: "Potatoes",
         plantingSeason: "Autumn-Winter (Mar-Aug)",
@@ -390,4 +390,5 @@ function switchLanguage() {
 
 // Add event listener for language toggle
 languageToggle.addEventListener('change', switchLanguage);
+
 
