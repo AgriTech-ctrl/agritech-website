@@ -361,6 +361,48 @@ body {
     color: #22c55e;
 }
 
+/* Fertilizer Info Section */
+.fertilizer-info {
+    margin-top: 2rem;
+    background-color: #2a2a2a;
+    padding: 1.5rem;
+    border-radius: 10px;
+    border: 1px solid #22c55e;
+}
+
+.fertilizer-info h5 {
+    color: #22c55e;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.fertilizer-tips {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.fertilizer-tip {
+    background-color: #1a1a1a;
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 3px solid #22c55e;
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+.fertilizer-tip strong {
+    color: #22c55e;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.fertilizer-tip span {
+    display: block;
+    line-height: 1.4;
+}
+
 /* Farming Guide Section */
 .farming-guide {
     padding: 80px 0;
@@ -695,6 +737,15 @@ body {
     .tips-grid {
         grid-template-columns: 1fr;
     }
+    
+    .fertilizer-tips {
+        flex-direction: column;
+    }
+    
+    .fertilizer-tip {
+        padding: 0.8rem;
+        font-size: 0.85rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -718,3 +769,4 @@ body {
         gap: 0.5rem;
     }
 }
+
