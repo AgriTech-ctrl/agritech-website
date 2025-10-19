@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgriTech - Smart Agriculture Solutions</title>
+    <title id="page-title" data-en="AgriTech - Smart Agriculture Solutions" data-se="AgriTech - Ditshwanelo tsa Temo e Botse" data-ve="AgriTech - Tshivhudzuludzi tsha Vhulimi" data-ts="AgriTech - Vutshila bya Vurimi">AgriTech - Smart Agriculture Solutions</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -21,10 +21,10 @@
                 <li><a href="#water-saving" class="nav-link" data-en="Water Saving" data-se="Go Boloka Meetse" data-ve="U Boloka Meetse" data-ts="Ku Hlayisa Mati">Water Saving</a></li>
                 <li>
                     <select id="language-toggle" class="language-select">
-                        <option value="en">🌐 English</option>
-                        <option value="se">🌐 Sepedi</option>
-                        <option value="ve">🌐 Venda</option>
-                        <option value="ts">🌐 Tsonga</option>
+                        <option value="en" data-en="🌐 English" data-se="🌐 English" data-ve="🌐 English" data-ts="🌐 English">🌐 English</option>
+                        <option value="se" data-en="🌐 Sepedi" data-se="🌐 Sepedi" data-ve="🌐 Sepedi" data-ts="🌐 Sepedi">🌐 Sepedi</option>
+                        <option value="ve" data-en="🌐 Venda" data-se="🌐 Venda" data-ve="🌐 Tshivenda" data-ts="🌐 Venda">🌐 Venda</option>
+                        <option value="ts" data-en="🌐 Tsonga" data-se="🌐 Tsonga" data-ve="🌐 Tsonga" data-ts="🌐 Xitsonga">🌐 Tsonga</option>
                     </select>
                 </li>
             </ul>
@@ -49,46 +49,72 @@
         <!-- Crop Calculator Section -->
         <section id="calculator" class="calculator-section">
             <div class="container">
-                <h2 data-en="Crop Calculator" data-se="Sebedi sa Dithunya">Crop Calculator</h2>
-                <p data-en="Enter your garden details to calculate crop requirements and costs" data-se="Kenya dintlha tsa serapa sa gago go bala dithunya le ditshenyegelo">Enter your garden details to calculate crop requirements and costs</p>
+                <h2 data-en="Crop Calculator" data-se="Sebedi sa Dithunya" data-ve="Tshivhudzuludzi tsha Mbeu" data-ts="Xikombelo xa Miri">Crop Calculator</h2>
+                <p data-en="Enter your garden details to calculate crop requirements and costs" data-se="Kenya dintlha tsa serapa sa gago go bala dithunya le ditshenyegelo" data-ve="Ngenisa dintlha dza serapa sawe u vhudzuludzi miri na tshifhinga" data-ts="Ngenisa rungula ra ndhawu ya wena ku hlaya miri na swikweleti">Enter your garden details to calculate crop requirements and costs</p>
                 
                 <div class="calculator-form">
                     <div class="form-group">
-                        <label for="length" data-en="Garden Length (m):" data-se="Bolelele bja Serapa (m):">Garden Length (m):</label>
+                        <label for="length" data-en="Garden Length (m):" data-se="Bolelele bja Serapa (m):" data-ve="Bolelele bja Serapa (m):" data-ts="Bolelele bya Serapa (m):">Garden Length (m):</label>
                         <input type="number" id="length" placeholder="Enter length in meters" min="1" step="0.1">
                     </div>
                     
                     <div class="form-group">
-                        <label for="width" data-en="Garden Width (m):" data-se="Bophara bja Serapa (m):">Garden Width (m):</label>
+                        <label for="width" data-en="Garden Width (m):" data-se="Bophara bja Serapa (m):" data-ve="Bophara bja Serapa (m):" data-ts="Bophara bya Serapa (m):">Garden Width (m):</label>
                         <input type="number" id="width" placeholder="Enter width in meters" min="1" step="0.1">
                     </div>
                     
                     <div class="form-group">
-                        <label for="crop-type" data-en="Select Crop Type:" data-se="Kgetha Mofuta wa Thunya:">Select Crop Type:</label>
+                        <label for="crop-type" data-en="Select Crop Type:" data-se="Kgetha Mofuta wa Thunya:" data-ve="Kgetha Mofuta wa Miri:" data-ts="Kgetha Mofuta wa Miri:">Select Crop Type:</label>
                         <select id="crop-type">
-                            <option value="" data-en="Choose a crop" data-se="Kgetha thunya">Choose a crop</option>
-                            <option value="tomatoes" data-en="Tomatoes" data-se="Ditamati">Tomatoes</option>
-                            <option value="cabbage" data-en="Cabbage" data-se="Kabbage">Cabbage</option>
-                            <option value="onions" data-en="Onions" data-se="Dionion">Onions</option>
-                            <option value="beetroot" data-en="Beetroot" data-se="Beetroot">Beetroot</option>
-                            <option value="carrots" data-en="Carrots" data-se="Dikaroti">Carrots</option>
-                            <option value="potatoes" data-en="Potatoes" data-se="Ditapole">Potatoes</option>
+                            <option value="" data-en="Choose a crop" data-se="Kgetha thunya" data-ve="Kgetha miri" data-ts="Kgetha miri">Choose a crop</option>
+                            <option value="tomatoes" data-en="Tomatoes" data-se="Ditamati" data-ve="Ditamati" data-ts="Ditamati">Tomatoes</option>
+                            <option value="cabbage" data-en="Cabbage" data-se="Kabbage" data-ve="Kabbage" data-ts="Kabbage">Cabbage</option>
+                            <option value="onions" data-en="Onions" data-se="Dionion" data-ve="Dionion" data-ts="Dionion">Onions</option>
+                            <option value="beetroot" data-en="Beetroot" data-se="Beetroot" data-ve="Beetroot" data-ts="Beetroot">Beetroot</option>
+                            <option value="carrots" data-en="Carrots" data-se="Dikaroti" data-ve="Dikaroti" data-ts="Dikaroti">Carrots</option>
+                            <option value="potatoes" data-en="Potatoes" data-se="Ditapole" data-ve="Ditapole" data-ts="Ditapole">Potatoes</option>
                         </select>
                     </div>
                     
-                    <button id="calculate-btn" class="calculate-button" data-en="Calculate Requirements" data-se="Bala Dithunya">Calculate Requirements</button>
+                    <div class="form-group">
+                        <label for="packet-size" data-en="Select Packet Size:" data-se="Kgetha Boholo bja Pakete:" data-ve="Kgetha Boholo bja Pakete:" data-ts="Kgetha Boholo bya Pakete:">Select Packet Size:</label>
+                        <select id="packet-size">
+                            <option value="" data-en="Choose packet size" data-se="Kgetha boholo bja pakete" data-ve="Kgetha boholo bja pakete" data-ts="Kgetha boholo bya pakete">Choose packet size</option>
+                            <option value="10g" data-en="10g Packet" data-se="Pakete ya 10g" data-ve="Pakete ya 10g" data-ts="Pakete ya 10g">10g Packet</option>
+                            <option value="20g" data-en="20g Packet" data-se="Pakete ya 20g" data-ve="Pakete ya 20g" data-ts="Pakete ya 20g">20g Packet</option>
+                            <option value="30g" data-en="30g Packet" data-se="Pakete ya 30g" data-ve="Pakete ya 30g" data-ts="Pakete ya 30g">30g Packet</option>
+                            <option value="50g" data-en="50g Packet" data-se="Pakete ya 50g" data-ve="Pakete ya 50g" data-ts="Pakete ya 50g">50g Packet</option>
+                            <option value="100g" data-en="100g Packet" data-se="Pakete ya 100g" data-ve="Pakete ya 100g" data-ts="Pakete ya 100g">100g Packet</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="budget" data-en="Your Budget (R):" data-se="Tshelete ya Gago (R):" data-ve="Mari Dzawe (R):" data-ts="Mari ya Wena (R):">Your Budget (R):</label>
+                        <input type="number" id="budget" placeholder="Minimum R50 - Enter your budget" min="50" step="10" data-placeholder-en="Minimum R50 - Enter your budget" data-placeholder-se="Monyane wa R50 - Kenya tshelete ya gago" data-placeholder-ve="Monyane wa R50 - Ngenisa mari dzawe" data-placeholder-ts="Minyane ya R50 - Ngenisa mari ya wena">
+                        <small data-en="Budget tiers: R50-100 (Basic), R100-200 (Good), R200+ (Premium) - We'll recommend the best brands for your budget!" data-se="Maemo a tshelete: R50-100 (Motheo), R100-200 (Botse), R200+ (Bohlokwa) - Re tla kgetha mebrand e botse bakeng sa tshelete ya gago!" data-ve="Tshifhinga tsha Mari: R50-100 (U Luga), R100-200 (U Luga), R200+ (Bohlokwa) - Ri ḓo vhudza mebrand ya u luga nga mari dzawe!" data-ts="Swikongomelo swa Mari: R50-100 (Ntlhanu), R100-200 (Ntlhanu), R200+ (Bohlokwa) - Hi ta vula mebrand yo lulamile hi mari ya wena!">Budget tiers: R50-100 (Basic), R100-200 (Good), R200+ (Premium) - We'll recommend the best brands for your budget!</small>
+                    </div>
+                    
+                    <button id="calculate-btn" class="calculate-button" data-en="Calculate Requirements" data-se="Bala Dithunya" data-ve="Vhudzuludzi Zwi Ḓo Nyadzwa" data-ts="Hlaya Swi Nyakaka">Calculate Requirements</button>
                 </div>
                 
                 <div id="results" class="results-section" style="display: none;">
                     <h3 data-en="Your Farm Plan" data-se="Morero wa Temo ya Gago" data-ve="Tshigwadzulo tsha Vhulimi Hawe" data-ts="Xirungulo xa Vurimi bya Wena">Your Farm Plan</h3>
                     <div class="result-cards">
                         <div class="result-card">
-                            <h4 data-en="Seeds Needed" data-se="Peo tsa Go Nyakega" data-ve="Mbeu dza Zwine Zwa Nyadzwa" data-ts="Mbeu le Swi Nyakaka">Seeds Needed</h4>
+                            <h4 data-en="Plants Needed" data-se="Dimela tsa Go Nyakega" data-ve="Miri dza Zwine Zwa Nyadzwa" data-ts="Miri le Swi Nyakaka">Plants Needed</h4>
                             <p id="plants-needed">0</p>
                         </div>
                         <div class="result-card">
-                            <h4 data-en="Seeds Cost" data-se="Tshelete ya Peo" data-ve="Mari dza Mbeu" data-ts="Xikweleti xa Mbeu">Seeds Cost</h4>
-                            <p id="estimated-cost">R0.00</p>
+                            <h4 data-en="Packets Needed" data-se="Dipakete tsa Go Nyakega" data-ve="Dipakete dza Zwine Zwa Nyadzwa" data-ts="Dipakete le Swi Nyakaka">Packets Needed</h4>
+                            <p id="packets-needed">0</p>
+                        </div>
+                        <div class="result-card">
+                            <h4 data-en="Fertilizer Needed" data-se="Mošola wa Go Nyakega" data-ve="Mošola wa Zwine Zwa Nyadzwa" data-ts="Mošola le Swi Nyakaka">Fertilizer Needed</h4>
+                            <p id="fertilizer-needed">0kg</p>
+                        </div>
+                        <div class="result-card">
+                            <h4 data-en="Packet Cost" data-se="Tshelete ya Pakete" data-ve="Mari dza Pakete" data-ts="Xikweleti xa Pakete">Packet Cost</h4>
+                            <p id="packet-cost">R0.00</p>
                         </div>
                         <div class="result-card">
                             <h4 data-en="Fertilizer Cost" data-se="Tshelete ya Mošola" data-ve="Mari dza Mošola" data-ts="Xikweleti xa Mošola">Fertilizer Cost</h4>
@@ -97,6 +123,10 @@
                         <div class="result-card">
                             <h4 data-en="Total Cost" data-se="Tshelete ka Moka" data-ve="Mari dza Zwiṱuku" data-ts="Xikweleti Xinkwawo">Total Cost</h4>
                             <p id="total-cost">R0.00</p>
+                        </div>
+                        <div class="result-card">
+                            <h4 data-en="Budget Remaining" data-se="Tshelete e Šetšego" data-ve="Mari dza Zwine Zwa Šala" data-ts="Xikweleti le Xi Salaka">Budget Remaining</h4>
+                            <p id="budget-remaining">R0.00</p>
                         </div>
                         <div class="result-card">
                             <h4 data-en="Row & Plant Spacing" data-se="Sebaka sa Dikgato le Dimela" data-ve="Sebaka sa Dikgato na Miri" data-ts="Ndhawu ya Dikgato na Miri">Row & Plant Spacing</h4>
@@ -148,20 +178,57 @@
                         </div>
                         
                         <div class="fertilizer-info">
-                            <h5 data-en="🌿 Fertilizer Recommendations" data-se="🌿 Ditshupetšo tša Mošola" data-ve="🌿 Tshifhinga tsha Mošola" data-ts="🌿 Switshupelo swa Mošola">🌿 Fertilizer Recommendations</h5>
+                            <h5 data-en="🌿 Affordable Fertilizer Options for South Africa" data-se="🌿 Ditshupetšo tša Mošola tša Go Kgona go Lefa Afrika Borwa" data-ve="🌿 Tshifhinga tsha Mošola tsha U Kgona go Lefa Afrika Borwa" data-ts="🌿 Switshupelo swa Mošola swa Ku Hlawula Afrika Dzonga">🌿 Affordable Fertilizer Options for South Africa</h5>
                             <div class="fertilizer-tips">
                                 <div class="fertilizer-tip">
+                                    <strong data-en="Budget-Friendly Options:" data-se="Ditshupetšo tša Go Kgona go Lefa:" data-ve="Tshifhinga tsha U Kgona go Lefa:" data-ts="Switshupelo swa Ku Hlawula:">Budget-Friendly Options:</strong>
+                                    <span data-en="• 2:3:2 fertilizer (R15-25 per 1kg bag) • Compost (make your own for free) • Chicken manure (R8-12 per 1kg bag) • Bone meal (R20-30 per 1kg bag)" data-se="• Mošola wa 2:3:2 (R15-25 ka 1kg bag) • Compost (itire ka gago mahala) • Manure ya kgoho (R8-12 ka 1kg bag) • Bone meal (R20-30 ka 1kg bag)" data-ve="• Mošola wa 2:3:2 (R15-25 nga 1kg bag) • Compost (u ite nga we mahala) • Manure ya kgoho (R8-12 nga 1kg bag) • Bone meal (R20-30 nga 1kg bag)" data-ts="• Mošola wa 2:3:2 (R15-25 hi 1kg bag) • Compost (swi endla ka wena mahala) • Manure ya kgoho (R8-12 hi 1kg bag) • Bone meal (R20-30 hi 1kg bag)">• 2:3:2 fertilizer (R15-25 per 1kg bag) • Compost (make your own for free) • Chicken manure (R8-12 per 1kg bag) • Bone meal (R20-30 per 1kg bag)</span>
+                                </div>
+                                <div class="fertilizer-tip">
                                     <strong data-en="For Tomatoes:" data-se="Bakeng sa Ditamati:" data-ve="Nga Ditamati:" data-ts="Hi Ditamati:">For Tomatoes:</strong>
-                                    <span data-en="Use 2:3:2 fertilizer at planting, then 3:1:5 during growth" data-se="Šomiša mošola wa 2:3:2 ka go lema, goba 3:1:5 ka nako ya go gola" data-ve="Shumisa mošola wa 2:3:2 nga u lema, nga 3:1:5 nga tshifhinga tsha u guda" data-ts="Tirhisa mošola wa 2:3:2 hi ku rima, nga 3:1:5 hi nkarhi wa ku kula">Use 2:3:2 fertilizer at planting, then 3:1:5 during growth</span>
+                                    <span data-en="Use 2:3:2 fertilizer at planting (1 tablespoon per plant), then organic compost monthly" data-se="Šomiša mošola wa 2:3:2 ka go lema (1 tablespoon ka dimela), goba compost ya tlhago ka kgwedi" data-ve="Shumisa mošola wa 2:3:2 nga u lema (1 tablespoon nga miri), nga compost ya tshifhinga nga vhege" data-ts="Tirhisa mošola wa 2:3:2 hi ku rima (1 tablespoon hi miri), nga compost ya ntlhanu nga vhiki">Use 2:3:2 fertilizer at planting (1 tablespoon per plant), then organic compost monthly</span>
                                 </div>
                                 <div class="fertilizer-tip">
                                     <strong data-en="For Leafy Vegetables:" data-se="Bakeng sa Merogo ya Mahlape:" data-ve="Nga Zwiḽiwa za Mahlape:" data-ts="Hi Swakudya swa Mahlape:">For Leafy Vegetables:</strong>
-                                    <span data-en="Use nitrogen-rich fertilizer like LAN (28%) for healthy leaves" data-se="Šomiša mošola wo nago le nitrogen go swana le LAN (28%) bakeng sa mahlape a botse" data-ve="Shumisa mošola wa nitrogen nga LAN (28%) nga mahlape a hone" data-ts="Tirhisa mošola wa nitrogen nga LAN (28%) hi mahlape ma lulamile">Use nitrogen-rich fertilizer like LAN (28%) for healthy leaves</span>
+                                    <span data-en="Chicken manure mixed with compost (1:3 ratio) provides excellent nutrition for leafy greens" data-se="Manure ya kgoho e tswakanyeditšwego le compost (1:3 ratio) e fa phepo e botse bakeng sa merogo ya mahlape" data-ve="Manure ya kgoho nga compost (1:3 ratio) i ita phepo ya u luga nga miri ya mahlape" data-ts="Manure ya kgoho hi compost (1:3 ratio) swi endla phepo yo lulamile eka miri wa mahlape">Chicken manure mixed with compost (1:3 ratio) provides excellent nutrition for leafy greens</span>
                                 </div>
                                 <div class="fertilizer-tip">
                                     <strong data-en="For Root Vegetables:" data-se="Bakeng sa Merogo ya Meleng:" data-ve="Nga Zwiḽiwa za Milenge:" data-ts="Hi Swakudya swa Milenge:">For Root Vegetables:</strong>
-                                    <span data-en="Use potassium-rich fertilizer for better root development" data-se="Šomiša mošola wo nago le potassium bakeng sa go gola ga meleng gabotse" data-ve="Shumisa mošola wa potassium nga milenge ya u luga" data-ts="Tirhisa mošola wa potassium hi milenge le mi lulamile">Use potassium-rich fertilizer for better root development</span>
+                                    <span data-en="Bone meal or wood ash mixed into soil provides potassium for strong root development" data-se="Bone meal goba mollo wa ditlhare o tswakanyeditšwego mmung o fa potassium bakeng sa go gola ga meleng gabotse" data-ve="Bone meal kana mollo wa ditlhare nga mmu i ita potassium nga milenge ya u luga" data-ts="Bone meal kumbe mollo wa miri hi misava swi endla potassium hi milenge le mi lulamile">Bone meal or wood ash mixed into soil provides potassium for strong root development</span>
                                 </div>
+                                <div class="fertilizer-tip">
+                                    <strong data-en="Budget Tiers & Brand Recommendations:" data-se="Maemo a Tshelete le Ditshupetšo tša Mebrand:" data-ve="Tshifhinga tsha Mari na Tshifhinga tsha Mebrand:" data-ts="Swikongomelo swa Mari na Switshupelo swa Mebrand:">Budget Tiers & Brand Recommendations:</strong>
+                                    <span data-en="• R50-100 (Basic): Local brands, make compost, chicken manure • R100-200 (Good): Starke Ayres, Mayford, quality compost • R200+ (Premium): Hygrotech, PanAmerican, professional grade" data-se="• R50-100 (Motheo): Mebrand ya lefelo, itire compost, manure ya kgoho • R100-200 (Botse): Starke Ayres, Mayford, compost e botse • R200+ (Bohlokwa): Hygrotech, PanAmerican, boemo bja profešenale" data-ve="• R50-100 (U Luga): Mebrand ya tshifhinga, u ita compost, manure ya kgoho • R100-200 (U Luga): Starke Ayres, Mayford, compost ya u luga • R200+ (Bohlokwa): Hygrotech, PanAmerican, boemo bja profešenale" data-ts="• R50-100 (Ntlhanu): Mebrand ya ndhawu, swi endla compost, manure ya kgoho • R100-200 (Ntlhanu): Starke Ayres, Mayford, compost yo lulamile • R200+ (Bohlokwa): Hygrotech, PanAmerican, boemo bya profešenale">• R50-100 (Basic): Local brands, make compost, chicken manure • R100-200 (Good): Starke Ayres, Mayford, quality compost • R200+ (Premium): Hygrotech, PanAmerican, professional grade</span>
+                                </div>
+                                <div class="fertilizer-tip">
+                                    <strong data-en="Money-Saving Tips:" data-se="Ditshupetšo tša Go Boloka Tshelete:" data-ve="Tshifhinga tsha U Boloka Mari:" data-ts="Switshupelo swa Ku Hlayisa Mari:">Money-Saving Tips:</strong>
+                                    <span data-en="• Make compost from kitchen scraps (free!) • Use coffee grounds as fertilizer • Collect rainwater for watering • Buy fertilizers in bulk with neighbors" data-se="• Itire compost ka ditshila tša kitšheni (mahala!) • Šomiša coffee grounds bjalo ka mošola • Kgobokela meetse a pula bakeng sa go nwetsa • Reka mošola ka moka le baagi" data-ve="• Ita compost nga tshila tsha tshifhinga (mahala!) • Shumisa coffee grounds sa mošola • Kgobokela meetse a pula nga u nwetsa • Reka mošola nga muthihi nga vhudzuludzi" data-ts="• Endla compost hi switshila swa kitšheni (mahala!) • Tirhisa coffee grounds hi mošola • Kgobokela mati ya pula eka ku nwetsa • Renga mošola hi ntlhanu hi vaaki">• Make compost from kitchen scraps (free!) • Use coffee grounds as fertilizer • Collect rainwater for watering • Buy fertilizers in bulk with neighbors</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Brand Recommendations Section -->
+                <div id="brand-recommendations-section" class="brand-recommendations-section" style="display: none;">
+                    <h3 data-en="🛒 Recommended Brands for Your Budget" data-se="🛒 Mebrand e Ditshupetšwego bakeng sa Tshelete ya Gago" data-ve="🛒 Mebrand dza u Luga nga Mari Dzawe" data-ts="🛒 Mebrand le Swi Lulamile hi Mari ya Wena">🛒 Recommended Brands for Your Budget</h3>
+                    <div class="recommendations-table">
+                        <div class="recommendation-row">
+                            <div class="recommendation-cell budget-tier">
+                                <h4 id="budget-tier-title" data-en="Budget Tier" data-se="Boemo bja Tshelete" data-ve="Tshifhinga tsha Mari" data-ts="Boemo bya Mari">Budget Tier</h4>
+                                <p id="budget-tier-value">-</p>
+                            </div>
+                            <div class="recommendation-cell seeds">
+                                <h4 data-en="🌱 Seed Brands" data-se="🌱 Mebrand ya Peo" data-ve="🌱 Mebrand dza Mbeu" data-ts="🌱 Mebrand ya Mbeu">🌱 Seed Brands</h4>
+                                <p id="seed-brands">-</p>
+                            </div>
+                            <div class="recommendation-cell fertilizer">
+                                <h4 data-en="🌿 Fertilizer Options" data-se="🌿 Ditshupetšo tša Mošola" data-ve="🌿 Tshifhinga tsha Mošola" data-ts="🌿 Switshupelo swa Mošola">🌿 Fertilizer Options</h4>
+                                <p id="fertilizer-options">-</p>
+                            </div>
+                            <div class="recommendation-cell tips">
+                                <h4 data-en="💡 Tips" data-se="💡 Ditshupetšo" data-ve="💡 Tshifhinga" data-ts="💡 Switshupelo">💡 Tips</h4>
+                                <p id="budget-tips">-</p>
                             </div>
                         </div>
                     </div>
@@ -371,4 +438,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
