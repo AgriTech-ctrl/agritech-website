@@ -211,6 +211,14 @@ body {
     transition: border-color 0.3s ease;
 }
 
+.form-group small {
+    display: block;
+    margin-top: 0.5rem;
+    color: #666;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
 .form-group input:focus,
 .form-group select:focus {
     outline: none;
@@ -276,6 +284,102 @@ body {
     font-size: 1.5rem;
     font-weight: 600;
     color: #fff;
+}
+
+.budget-tier-card {
+    background-color: #2a2a2a;
+    border: 2px solid #16a34a;
+}
+
+.budget-tier-card h4 {
+    color: #16a34a;
+}
+
+.budget-tier-card p {
+    font-size: 1.1rem;
+    line-height: 1.4;
+    text-align: left;
+}
+
+/* Brand Recommendations Section */
+.brand-recommendations-section {
+    margin-top: 3rem;
+    padding: 2rem;
+    background-color: #f8f9fa;
+    border-radius: 15px;
+    border: 3px solid #22c55e;
+}
+
+.brand-recommendations-section h3 {
+    text-align: center;
+    color: #22c55e;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.recommendations-table {
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.recommendation-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 0;
+}
+
+.recommendation-cell {
+    padding: 1.5rem;
+    border-right: 1px solid #e5e7eb;
+    background-color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.recommendation-cell:last-child {
+    border-right: none;
+}
+
+.recommendation-cell:hover {
+    background-color: #f8f9fa;
+}
+
+.recommendation-cell h4 {
+    color: #22c55e;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.recommendation-cell p {
+    color: #333;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    text-align: left;
+    margin: 0;
+}
+
+.budget-tier {
+    background-color: #e8f5e8;
+    border-left: 4px solid #22c55e;
+}
+
+.seeds {
+    background-color: #fff5e6;
+    border-left: 4px solid #f59e0b;
+}
+
+.fertilizer {
+    background-color: #f0f9ff;
+    border-left: 4px solid #3b82f6;
+}
+
+.tips {
+    background-color: #fdf4ff;
+    border-left: 4px solid #a855f7;
 }
 
 /* Seed Companies Section */
@@ -746,6 +850,19 @@ body {
         padding: 0.8rem;
         font-size: 0.85rem;
     }
+    
+    .recommendation-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .recommendation-cell {
+        border-right: none;
+        border-bottom: 1px solid #e5e7eb;
+    }
+    
+    .recommendation-cell:last-child {
+        border-bottom: none;
+    }
 }
 
 @media (max-width: 480px) {
@@ -769,4 +886,3 @@ body {
         gap: 0.5rem;
     }
 }
-
