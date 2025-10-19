@@ -304,38 +304,65 @@ body {
 /* Brand Recommendations Section */
 .brand-recommendations-section {
     margin-top: 3rem;
-    padding: 2rem;
-    background-color: #f8f9fa;
-    border-radius: 15px;
+    padding: 2.5rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e8f5e8 100%);
+    border-radius: 20px;
     border: 3px solid #22c55e;
+    box-shadow: 0 15px 35px rgba(34, 197, 94, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.brand-recommendations-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #22c55e, #16a34a, #15803d);
 }
 
 .brand-recommendations-section h3 {
     text-align: center;
     color: #22c55e;
-    margin-bottom: 2rem;
-    font-size: 1.8rem;
+    margin-bottom: 2.5rem;
+    font-size: 2rem;
     font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.brand-recommendations-section h3::after {
+    content: '🛒';
+    margin-left: 10px;
+    font-size: 1.5rem;
 }
 
 .recommendations-table {
     background-color: #fff;
-    border-radius: 12px;
+    border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    border: 1px solid #e5e7eb;
 }
 
 .recommendation-row {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 0;
+    min-height: 200px;
 }
 
 .recommendation-cell {
-    padding: 1.5rem;
+    padding: 2rem 1.5rem;
     border-right: 1px solid #e5e7eb;
     background-color: #fff;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .recommendation-cell:last-child {
@@ -344,42 +371,111 @@ body {
 
 .recommendation-cell:hover {
     background-color: #f8f9fa;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 .recommendation-cell h4 {
     color: #22c55e;
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
-    font-weight: 600;
+    margin-bottom: 1.2rem;
+    font-size: 1.2rem;
+    font-weight: 700;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .recommendation-cell p {
     color: #333;
     font-size: 0.95rem;
-    line-height: 1.5;
+    line-height: 1.6;
     text-align: left;
     margin: 0;
+    flex-grow: 1;
 }
 
 .budget-tier {
-    background-color: #e8f5e8;
-    border-left: 4px solid #22c55e;
+    background: linear-gradient(135deg, #e8f5e8 0%, #f0f9f0 100%);
+    border-left: 5px solid #22c55e;
+    position: relative;
+}
+
+.budget-tier::before {
+    content: '💰';
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    opacity: 0.7;
+}
+
+.budget-tier h4::before {
+    content: '💵 ';
+    margin-right: 5px;
 }
 
 .seeds {
-    background-color: #fff5e6;
-    border-left: 4px solid #f59e0b;
+    background: linear-gradient(135deg, #fff5e6 0%, #fef3e2 100%);
+    border-left: 5px solid #f59e0b;
+    position: relative;
+}
+
+.seeds::before {
+    content: '🌱';
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    opacity: 0.7;
+}
+
+.seeds h4::before {
+    content: '🌾 ';
+    margin-right: 5px;
 }
 
 .fertilizer {
-    background-color: #f0f9ff;
-    border-left: 4px solid #3b82f6;
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    border-left: 5px solid #3b82f6;
+    position: relative;
+}
+
+.fertilizer::before {
+    content: '🌿';
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    opacity: 0.7;
+}
+
+.fertilizer h4::before {
+    content: '🧪 ';
+    margin-right: 5px;
 }
 
 .tips {
-    background-color: #fdf4ff;
-    border-left: 4px solid #a855f7;
+    background: linear-gradient(135deg, #fdf4ff 0%, #f3e8ff 100%);
+    border-left: 5px solid #a855f7;
+    position: relative;
+}
+
+.tips::before {
+    content: '💡';
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    opacity: 0.7;
+}
+
+.tips h4::before {
+    content: '🎯 ';
+    margin-right: 5px;
 }
 
 /* Seed Companies Section */
@@ -853,15 +949,28 @@ body {
     
     .recommendation-row {
         grid-template-columns: 1fr;
+        min-height: auto;
     }
     
     .recommendation-cell {
         border-right: none;
         border-bottom: 1px solid #e5e7eb;
+        padding: 1.5rem 1rem;
+        min-height: 150px;
     }
     
     .recommendation-cell:last-child {
         border-bottom: none;
+    }
+    
+    .brand-recommendations-section {
+        padding: 1.5rem;
+        margin-top: 2rem;
+    }
+    
+    .brand-recommendations-section h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
     }
 }
 
